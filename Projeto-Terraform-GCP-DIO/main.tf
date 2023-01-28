@@ -13,7 +13,7 @@ terraform {
 }
 
 provider "google" {
-  project = "superpro-devops-iac"
+  project = "treinamento-gcp"
   region  = "us-central1"
   zone    = "us-central1-c"
 }
@@ -23,7 +23,7 @@ resource "google_compute_network" "vpc_network" {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "cloudbbuildterraform-instance"
+  name         = "cloudbbuildterraform"
   machine_type = "f1-micro"
   tags = ["prod"]
 
