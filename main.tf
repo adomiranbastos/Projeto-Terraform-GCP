@@ -6,16 +6,16 @@ terraform {
   }
 
    backend "gcs" {
-    bucket  = "superproterraform"
+    bucket  = "treinamento-gcp-372918_cloudbuild"
     prefix  = "terraform/state"
   }
   
 }
 
 provider "google" {
-  project = "treinamento-gcp"
+  project = "treinamento-gcp-372918"
   region  = "us-central1"
-  zone    = "us-central1-C"
+  zone    = "us-central1-c"
 }
 
 resource "google_compute_network" "vpc_network" {
@@ -37,7 +37,7 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
   network_interface {
-    network = "google_compute_network.vpc_network.name"
+    network = "default"
     access_config {
     }
   }
